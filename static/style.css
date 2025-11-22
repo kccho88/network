@@ -42,6 +42,54 @@ main {
     padding: 30px;
 }
 
+.api-key-section {
+    background: #f8f9fa;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.api-key-section h2 {
+    font-size: 1.3em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.api-key-input-wrapper {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.api-key-input-wrapper input {
+    flex: 1;
+}
+
+.btn-toggle {
+    padding: 12px 16px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s;
+}
+
+.btn-toggle:hover {
+    background: #5568d3;
+}
+
+.help-text a {
+    color: #667eea;
+    text-decoration: none;
+}
+
+.help-text a:hover {
+    text-decoration: underline;
+}
+
 .config-form {
     display: flex;
     flex-direction: column;
@@ -65,12 +113,19 @@ main {
 }
 
 .form-group input,
-.form-group select {
+.form-group select,
+.form-group textarea {
     padding: 12px;
     border: 2px solid #e0e0e0;
     border-radius: 6px;
     font-size: 1em;
     transition: border-color 0.3s;
+    font-family: inherit;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
 }
 
 .form-group input:focus,
@@ -201,6 +256,19 @@ main {
     padding: 15px;
     border-radius: 6px;
     margin-top: 20px;
+}
+
+.api-key-status {
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+.api-key-status.success-message {
+    background: #d4edda;
+    border-color: #28a745;
+    color: #155724;
+    padding: 10px 15px;
+    border-radius: 6px;
 }
 
 footer {
