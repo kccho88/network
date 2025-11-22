@@ -1,0 +1,14 @@
+set system host-name {{ hostname }}
+set system root-authentication plain-text-password
+!
+set vlans MANAGEMENT vlan-id {{ mgmt_vlan }}
+set vlans MANAGEMENT l3-interface irb.{{ mgmt_vlan }}
+!
+set interfaces {{ mgmt_interface }} unit 0 family inet address {{ mgmt_ip }}/{{ mgmt_mask_cidr }}
+!
+set interfaces irb unit {{ mgmt_vlan }} family inet address {{ mgmt_ip }}/{{ mgmt_mask_cidr }}
+!
+set routing-options static route 0.0.0.0/0 next-hop {{ gateway }}
+!
+
+

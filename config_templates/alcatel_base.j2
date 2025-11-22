@@ -1,0 +1,16 @@
+configure system name "{{ hostname }}"
+!
+configure vlan {{ mgmt_vlan }} name "MANAGEMENT"
+!
+configure vlan {{ mgmt_vlan }} ipaddress {{ mgmt_ip }}/{{ mgmt_mask_cidr }}
+!
+configure vlan {{ mgmt_vlan }} ip-mtu 1500
+!
+configure vlan {{ mgmt_vlan }} port {{ mgmt_interface }} tagged
+!
+configure router interface "system"
+configure router interface "system" ip address {{ mgmt_ip }}/{{ mgmt_mask_cidr }}
+!
+configure router static-route 0.0.0.0/0 next-hop {{ gateway }}
+!
+

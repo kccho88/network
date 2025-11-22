@@ -1,0 +1,16 @@
+hostname {{ hostname }}
+!
+vlan {{ mgmt_vlan }}
+ name MANAGEMENT
+!
+interface {{ mgmt_interface }}
+ no switchport
+ ip address {{ mgmt_ip }} {{ mgmt_mask }}
+ no shutdown
+!
+interface Vlan{{ mgmt_vlan }}
+ ip address {{ mgmt_ip }} {{ mgmt_mask }}
+ no shutdown
+!
+
+

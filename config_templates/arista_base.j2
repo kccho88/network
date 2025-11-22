@@ -1,0 +1,17 @@
+hostname {{ hostname }}
+!
+vlan {{ mgmt_vlan }}
+   name MANAGEMENT
+!
+interface Management1
+   description Management Interface
+   no switchport
+   ip address {{ mgmt_ip }}/{{ mgmt_mask_cidr }}
+   no shutdown
+!
+ip default-gateway {{ gateway }}
+!
+ip name-server 8.8.8.8
+ip name-server 8.8.4.4
+!
+

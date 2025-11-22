@@ -1,0 +1,15 @@
+hostname "{{ hostname }}"
+!
+vlan {{ mgmt_vlan }}
+   name "MANAGEMENT"
+   untagged {{ mgmt_interface }}
+   ip address {{ mgmt_ip }} {{ mgmt_mask }}
+   exit
+!
+ip default-gateway {{ gateway }}
+!
+ip dns server-address 8.8.8.8
+ip dns server-address 8.8.4.4
+!
+!
+
